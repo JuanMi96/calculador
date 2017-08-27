@@ -26,6 +26,16 @@ public class Calculador {
         
     }
     
+    void dividir(){
+        
+        resultado=operador1/operador2;
+        
+        
+    }
+    void multiplicar(){
+    
+    resultado=operador1*operador2;
+    }
     
     
 } 
