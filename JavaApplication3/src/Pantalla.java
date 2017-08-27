@@ -13,7 +13,7 @@ public class Pantalla extends javax.swing.JFrame {
     Calculador miCalculador=new Calculador();
     
     
-            
+           int operador;
             
             
             
@@ -101,6 +101,16 @@ public class Pantalla extends javax.swing.JFrame {
         miCalculador.operador2=numero;
         miCalculador.sumar();
         
+        switch (operador){ 
+            case 0:
+             miCalculador.sumar();
+             
+            case 1:
+             miCalculador.restar(); 
+                
+        }
+        
+        
         numero=miCalculador.resultado;
         display.setText(string.valueOf(numero));
    
@@ -122,6 +132,7 @@ public class Pantalla extends javax.swing.JFrame {
     private void BotonSuma1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonSuma1MouseClicked
        
       guardarOperador1();
+        operador= 0;
         
     }//GEN-LAST:event_BotonSuma1MouseClicked
     
@@ -129,7 +140,9 @@ public class Pantalla extends javax.swing.JFrame {
     
     private void BotonRestaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRestaMouseClicked
        
-        guardarOperado1();
+        guardarOperador1();
+        
+        operador=1;
         
     }//GEN-LAST:event_BotonRestaMouseClicked
 
