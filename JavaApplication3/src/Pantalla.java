@@ -110,26 +110,27 @@ public class Pantalla extends javax.swing.JFrame {
         
     }//GEN-LAST:event_BotonIgualMouseClicked
 
+    void guardarOperador1;
+        float numero;
+        
+         numero=Float.valueOf(display.getText());
+        
+        miCalculador.operador1=numero;
+      
+        display.setText("");
+        
     private void BotonSuma1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonSuma1MouseClicked
        
-            float numero;
-        
-         numero=Float.valueOf(display.getText());
-        
-        miCalculador.operador1=numero;
-        
-        display.setText("");
+      guardarOperador1();
         
     }//GEN-LAST:event_BotonSuma1MouseClicked
-
+    
+   
+    
     private void BotonRestaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRestaMouseClicked
-            float numero;
+       
+        guardarOperado1();
         
-         numero=Float.valueOf(display.getText());
-        
-        miCalculador.operador1=numero;
-        
-        display.setText("");
     }//GEN-LAST:event_BotonRestaMouseClicked
 
     /**
