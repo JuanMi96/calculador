@@ -32,8 +32,13 @@ public class Pantalla extends javax.swing.JFrame {
 
         display = new javax.swing.JLabel();
         BotonIgual = new javax.swing.JToggleButton();
-        BotonSuma1 = new javax.swing.JToggleButton();
+        BotonSuma = new javax.swing.JToggleButton();
         BotonResta = new javax.swing.JToggleButton();
+        BotonDivision = new javax.swing.JToggleButton();
+        BotonMultiplicacion = new javax.swing.JToggleButton();
+        BotonTangente = new javax.swing.JToggleButton();
+        BotonCoseno = new javax.swing.JToggleButton();
+        BotonSeno = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,10 +49,10 @@ public class Pantalla extends javax.swing.JFrame {
             }
         });
 
-        BotonSuma1.setText("+");
-        BotonSuma1.addMouseListener(new java.awt.event.MouseAdapter() {
+        BotonSuma.setText("+");
+        BotonSuma.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotonSuma1MouseClicked(evt);
+                BotonSumaMouseClicked(evt);
             }
         });
 
@@ -55,6 +60,41 @@ public class Pantalla extends javax.swing.JFrame {
         BotonResta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BotonRestaMouseClicked(evt);
+            }
+        });
+
+        BotonDivision.setText("/");
+        BotonDivision.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonDivisionMouseClicked(evt);
+            }
+        });
+
+        BotonMultiplicacion.setText("*");
+        BotonMultiplicacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonMultiplicacionMouseClicked(evt);
+            }
+        });
+
+        BotonTangente.setText("TAN");
+        BotonTangente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonTangenteMouseClicked(evt);
+            }
+        });
+
+        BotonCoseno.setText("COS");
+        BotonCoseno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonCosenoMouseClicked(evt);
+            }
+        });
+
+        BotonSeno.setText("SEN");
+        BotonSeno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonSenoMouseClicked(evt);
             }
         });
 
@@ -69,11 +109,25 @@ public class Pantalla extends javax.swing.JFrame {
                         .addComponent(display, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(81, 81, 81)
-                        .addComponent(BotonSuma1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(BotonIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(BotonResta, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(BotonSuma, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(BotonIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(BotonResta, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(BotonDivision, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(BotonMultiplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(BotonSeno, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(BotonTangente, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(BotonCoseno, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(84, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -84,9 +138,18 @@ public class Pantalla extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonSuma1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonSuma, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonResta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonDivision, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonMultiplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonSeno, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonTangente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonCoseno, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
@@ -107,12 +170,22 @@ public class Pantalla extends javax.swing.JFrame {
              
             case 1:
              miCalculador.restar(); 
+             
+            case 2:
+             miCalculador.dividir();   
+             
+            case 3:
+                
+             miCalculador.multiplicar();
+              
                 
         }
         
         
         numero=miCalculador.resultado;
         display.setText(string.valueOf(numero));
+        
+      
    
         
         
@@ -120,7 +193,7 @@ public class Pantalla extends javax.swing.JFrame {
         
     }//GEN-LAST:event_BotonIgualMouseClicked
 
-    void guardarOperador1;
+    void guardarOperador1 (){
         float numero;
         
          numero=Float.valueOf(display.getText());
@@ -128,13 +201,14 @@ public class Pantalla extends javax.swing.JFrame {
         miCalculador.operador1=numero;
       
         display.setText("");
+    }
         
-    private void BotonSuma1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonSuma1MouseClicked
+    private void BotonSumaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonSumaMouseClicked
        
       guardarOperador1();
         operador= 0;
         
-    }//GEN-LAST:event_BotonSuma1MouseClicked
+    }//GEN-LAST:event_BotonSumaMouseClicked
     
    
     
@@ -145,6 +219,33 @@ public class Pantalla extends javax.swing.JFrame {
         operador=1;
         
     }//GEN-LAST:event_BotonRestaMouseClicked
+
+    private void BotonDivisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonDivisionMouseClicked
+       
+        guardarOperador1();
+        
+        operador=
+        
+    }//GEN-LAST:event_BotonDivisionMouseClicked
+
+    private void BotonMultiplicacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonMultiplicacionMouseClicked
+      guardarOperador1();
+      
+      operador=
+              
+    }//GEN-LAST:event_BotonMultiplicacionMouseClicked
+
+    private void BotonTangenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonTangenteMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonTangenteMouseClicked
+
+    private void BotonCosenoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCosenoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonCosenoMouseClicked
+
+    private void BotonSenoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonSenoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonSenoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -182,9 +283,14 @@ public class Pantalla extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton BotonCoseno;
+    private javax.swing.JToggleButton BotonDivision;
     private javax.swing.JToggleButton BotonIgual;
+    private javax.swing.JToggleButton BotonMultiplicacion;
     private javax.swing.JToggleButton BotonResta;
-    private javax.swing.JToggleButton BotonSuma1;
+    private javax.swing.JToggleButton BotonSeno;
+    private javax.swing.JToggleButton BotonSuma;
+    private javax.swing.JToggleButton BotonTangente;
     private javax.swing.JLabel display;
     // End of variables declaration//GEN-END:variables
 }
